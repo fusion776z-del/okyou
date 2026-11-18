@@ -1,0 +1,497 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+
+  font-family:
+  "Hiragino Mincho ProN",
+  "Yu Mincho",
+  serif;
+
+  background:
+  linear-gradient(
+    180deg,
+    #f8f3e7 0%,
+    #efe6d0 100%
+  );
+
+  color:#3d2b1f;
+
+  min-height:100vh;
+}
+
+.app{
+  max-width:900px;
+  margin:auto;
+  padding:16px;
+}
+
+/* =====================
+   Header
+===================== */
+
+header{
+
+  background:
+  rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(4px);
+
+  border:1px solid #d6c7a7;
+
+  border-radius:20px;
+
+  padding:20px;
+
+  margin-bottom:20px;
+
+  box-shadow:
+  0 4px 15px rgba(0,0,0,.08);
+}
+
+.row{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+#workTitle{
+  font-size:28px;
+  font-weight:bold;
+  color:#6d4c1b;
+}
+
+#chapterTitle{
+  margin-top:12px;
+  font-size:20px;
+  text-align:center;
+}
+
+.badge{
+
+  background:#b8860b;
+  color:white;
+
+  padding:8px 14px;
+
+  border-radius:30px;
+
+  font-weight:bold;
+}
+
+.exp{
+  text-align:center;
+  margin-top:10px;
+}
+
+/* =====================
+   Progress
+===================== */
+
+.progress{
+
+  height:12px;
+
+  background:#ddd;
+
+  border-radius:20px;
+
+  overflow:hidden;
+
+  margin-top:15px;
+}
+
+.progress-fill{
+
+  height:100%;
+
+  width:0%;
+
+  background:
+  linear-gradient(
+    90deg,
+    #d4af37,
+    #ffd700
+  );
+
+  transition:.3s;
+}
+
+/* =====================
+   Cards
+===================== */
+
+#workSelect,
+#sutraSelect,
+#chapterSelect{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:16px;
+}
+
+.work-card{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:24px;
+
+  cursor:pointer;
+
+  text-align:center;
+
+  border:2px solid #d8c39a;
+
+  transition:.2s;
+}
+
+.work-card:hover{
+
+  transform:translateY(-4px);
+
+  box-shadow:
+  0 10px 20px
+  rgba(0,0,0,.12);
+
+  border-color:#b8860b;
+}
+
+.work-card h3{
+  margin-bottom:10px;
+}
+
+.work-card p{
+  color:#777;
+}
+
+/* =====================
+   Study
+===================== */
+
+#studyUI{
+  margin-top:20px;
+}
+
+.passage{
+
+  background:white;
+
+  border-radius:20px;
+
+  padding:24px;
+
+  line-height:2.4;
+
+  font-size:1.2rem;
+
+  box-shadow:
+  0 4px 15px rgba(0,0,0,.08);
+}
+
+.word{
+
+  cursor:pointer;
+
+  color:#b71c1c;
+
+  text-decoration:underline;
+
+  text-decoration-thickness:2px;
+
+  font-weight:bold;
+}
+
+.word.done{
+
+  color:#2e7d32;
+
+  text-decoration:none;
+}
+
+/* =====================
+   Translation
+===================== */
+
+.translation{
+
+  display:none;
+
+  margin-top:20px;
+
+  background:white;
+
+  padding:20px;
+
+  border-radius:20px;
+
+  box-shadow:
+  0 4px 15px rgba(0,0,0,.08);
+}
+
+.translation.show{
+  display:block;
+}
+
+/* =====================
+   Status
+===================== */
+
+.status{
+
+  margin-top:20px;
+
+  text-align:center;
+
+  font-weight:bold;
+}
+
+/* =====================
+   Buttons
+===================== */
+
+.actions{
+
+  margin-top:20px;
+
+  display:flex;
+
+  gap:10px;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+}
+
+button{
+
+  border:none;
+
+  cursor:pointer;
+
+  border-radius:12px;
+
+  padding:12px 18px;
+
+  font-size:16px;
+
+  transition:.2s;
+}
+
+button:hover{
+  opacity:.9;
+}
+
+.btn{
+
+  background:#8d6e63;
+
+  color:white;
+}
+
+.green{
+
+  background:#2e7d32;
+
+  color:white;
+}
+
+.lock{
+
+  opacity:.4;
+
+  pointer-events:none;
+}
+
+/* =====================
+   Overlay
+===================== */
+
+#overlay{
+
+  position:fixed;
+
+  inset:0;
+
+  background:
+  rgba(0,0,0,.4);
+
+  display:none;
+
+  z-index:100;
+}
+
+#overlay.show{
+  display:block;
+}
+
+/* =====================
+   Drawer
+===================== */
+
+.drawer{
+
+  position:fixed;
+
+  left:0;
+  right:0;
+  bottom:-100%;
+
+  background:white;
+
+  border-radius:
+  24px 24px 0 0;
+
+  padding:24px;
+
+  transition:.3s;
+
+  z-index:101;
+
+  max-height:80vh;
+
+  overflow:auto;
+
+  box-shadow:
+  0 -10px 30px
+  rgba(0,0,0,.2);
+}
+
+.drawer.show{
+  bottom:0;
+}
+
+.close-btn{
+
+  position:absolute;
+
+  right:15px;
+  top:15px;
+
+  width:40px;
+  height:40px;
+
+  border-radius:50%;
+
+  background:#eee;
+}
+
+#term{
+
+  text-align:center;
+
+  margin-bottom:20px;
+
+  color:#6d4c1b;
+}
+
+.question{
+
+  text-align:center;
+
+  font-weight:bold;
+
+  margin-bottom:20px;
+
+  font-size:18px;
+}
+
+#choices{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:10px;
+}
+
+.option{
+
+  width:100%;
+
+  background:#f8f8f8;
+
+  border:1px solid #ddd;
+
+  text-align:left;
+}
+
+.option:hover{
+
+  background:#fff7dc;
+
+  border-color:#d4af37;
+}
+
+/* =====================
+   Result
+===================== */
+
+.correct{
+
+  margin-top:20px;
+
+  background:#e8f5e9;
+
+  color:#1b5e20;
+
+  padding:16px;
+
+  border-radius:12px;
+}
+
+.wrong{
+
+  margin-top:20px;
+
+  background:#ffebee;
+
+  color:#b71c1c;
+
+  padding:16px;
+
+  border-radius:12px;
+}
+
+/* =====================
+   Ruby
+===================== */
+
+ruby{
+  ruby-align:center;
+}
+
+rt{
+
+  font-size:.6em;
+
+  color:#666;
+}
+
+/* =====================
+   Smartphone
+===================== */
+
+@media(max-width:600px){
+
+  #workTitle{
+    font-size:22px;
+  }
+
+  #chapterTitle{
+    font-size:18px;
+  }
+
+  .passage{
+    font-size:1rem;
+    line-height:2;
+  }
+
+}

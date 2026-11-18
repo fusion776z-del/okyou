@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
+
+<title>ことのは法音</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- 般若心経 -->
+<script src="cassettes/hannya01.js"></script>
+<script src="cassettes/hannya02.js"></script>
+<script src="cassettes/hannya03.js"></script>
+<script src="cassettes/hannya04.js"></script>
+<script src="cassettes/hannya05.js"></script>
+<script src="cassettes/hannya06.js"></script>
+<script src="cassettes/hannya07.js"></script>
+<script src="cassettes/hannya08.js"></script>
+<script src="cassettes/hannya09.js"></script>
+<script src="cassettes/hannya10.js"></script>
+<script src="cassettes/hannya11.js"></script>
+<script src="cassettes/hannya12.js"></script>
+<script src="cassettes/hannya13.js"></script>
+<script src="cassettes/hannya14.js"></script>
+<script src="cassettes/hannya15.js"></script>
+<script src="cassettes/hannya16.js"></script>
+<script src="cassettes/hannya17.js"></script>
+<script src="cassettes/hannya18.js"></script>
+<script src="cassettes/hannya19.js"></script>
+<script src="cassettes/hannya20.js"></script>
+<script src="cassettes/hannya21.js"></script>
+<script src="cassettes/hannya22.js"></script>
+<script src="cassettes/hannya23.js"></script>
+<script src="cassettes/hannya24.js"></script>
+<script src="cassettes/hannya25.js"></script>
+<script src="cassettes/hannya26.js"></script>
+<script src="cassettes/hannya27.js"></script>
+<script src="cassettes/hannya28.js"></script>
+<script src="cassettes/hannya29.js"></script>
+<script src="cassettes/hannya30.js"></script>
+<script src="cassettes/hannya31.js"></script>
+<script src="cassettes/hannya32.js"></script>
+<script src="cassettes/hannya33.js"></script>
+<script src="cassettes/hannya34.js"></script>
+<script src="cassettes/hannya35.js"></script>
+<script src="cassettes/hannya36.js"></script>
+<script src="cassettes/hannya37.js"></script>
+<script src="cassettes/hannya38.js"></script>
+<script src="cassettes/hannya39.js"></script>
+<script src="cassettes/hannya40.js"></script>
+<script src="cassettes/hannya41.js"></script>
+<script src="cassettes/hannya42.js"></script>
+
+<script src="cassettes/hannya.js"></script>
+
+<script src="app.js" defer></script>
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+
+<div class="row">
+
+<div id="workTitle">
+ことのは法音
+</div>
+
+<div class="badge">
+Lv <span id="level">1</span>
+</div>
+
+</div>
+
+<h2 id="chapterTitle">
+宗派を選択してください
+</h2>
+
+<div class="progress">
+
+<div
+id="progressBar"
+class="progress-fill">
+</div>
+
+</div>
+
+<div class="exp">
+EXP :
+<span id="exp">0</span>
+</div>
+
+</header>
+
+<!-- 宗派一覧 -->
+
+<div id="workSelect">
+</div>
+
+<!-- お経一覧 -->
+
+<div id="sutraSelect"
+     style="display:none;">
+</div>
+
+<!-- 章一覧 -->
+
+<div id="chapterSelect"
+     style="display:none;">
+</div>
+
+<!-- 学習画面 -->
+
+<div id="studyUI"
+     style="display:none;">
+
+<section
+class="passage"
+id="lessonScreen">
+</section>
+
+<!-- 読解 -->
+
+<div
+class="translation"
+id="readingQuiz">
+</div>
+
+<!-- 現代語訳 -->
+
+<div
+class="translation"
+id="translation">
+</div>
+
+<!-- 章クリア -->
+
+<div
+id="chapterComplete"
+style="display:none;margin:20px;">
+
+<button
+class="btn green"
+onclick="backToChapter()">
+
+章選択へ戻る
+
+</button>
+
+</div>
+
+<!-- 進捗 -->
+
+<div class="status">
+
+学習進捗
+
+<span id="count">
+0 / 0
+</span>
+
+</div>
+
+<!-- ボタン -->
+
+<div class="actions">
+
+<button
+onclick="backToTitle()">
+
+タイトルへ戻る
+
+</button>
+
+<button
+onclick="backToChapter()">
+章選択へ戻る
+</button>
+
+<button
+id="translationBtn"
+class="btn green lock">
+
+現代語訳
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- 背景 -->
+
+<div id="overlay"></div>
+
+<!-- 問題ドロワー -->
+
+<div
+class="drawer"
+id="drawer">
+
+<button
+class="close-btn"
+onclick="closeDrawer()">
+
+✕
+
+</button>
+
+<h2 id="term"></h2>
+
+<div class="question">
+
+意味を選びましょう
+
+</div>
+
+<div id="choices">
+</div>
+
+<div id="result">
+</div>
+
+</div>
+
+</body>
+</html>
